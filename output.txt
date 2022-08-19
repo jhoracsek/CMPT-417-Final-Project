@@ -1,0 +1,42 @@
+Test instance:0
+PDB_663
+Time Elapsed:1.9454238830000008
+Nodes Generated:30855
+Nodes Expanded:9923
+Cost:41.0
+
+PDB_456
+Time Elapsed:3.2080715647999964
+Nodes Generated:47561
+Nodes Expanded:15455
+Cost:41.0
+
+PDB_555
+Time Elapsed:1.1984255200000007
+Nodes Generated:20246
+Nodes Expanded:6562
+Cost:41.0
+
+
+
+Test instance:1
+PDB_663
+Time Elapsed:2.8024534486000023
+Nodes Generated:48111
+Nodes Expanded:15419
+Cost:49.0
+
+PDB_456
+Time Elapsed:2.1794029857999986
+Nodes Generated:36571
+Nodes Expanded:11672
+Cost:49.0
+
+PDB_555
+Time Elapsed:3.618783382999993
+Nodes Generated:65852
+Nodes Expanded:21051
+Cost:49.0
+
+
+
