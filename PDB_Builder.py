@@ -282,12 +282,21 @@ def PDB_UCS_6(root):
 
 #PDB Construction
 start = time.time()
-test_state = n_puzzle(4,[5,6,7,8])
+test_state = n_puzzle(4,[5,6,7,9])
 test_node = node(test_state, None, 1)
 PDB_4_2 = PDB_UCS(test_node)
 end = time.time()
 print(end-start)
 np.save('PDB_4_2.npy', PDB_4_2)
+
+#PDB Construction
+#start = time.time()
+#test_state = n_puzzle(4,[6,7,10,11])
+#test_node = node(test_state, None, 1)
+#PDB_4_3 = PDB_UCS(test_node)
+#end = time.time()
+#print(end-start)
+#np.save('PDB_4_3.npy', PDB_4_3)
 
 #PDB Construction
 #start = time.time()
@@ -308,13 +317,13 @@ np.save('PDB_4_2.npy', PDB_4_2)
 #np.save('PDB_5_2.npy', PDB_5_2)
 
 #PDB Construction
-start = time.time()
-test_state = n_puzzle(4,[10,11,13,14,15])
-test_node = node(test_state, None, 1)
-PDB_5_4 = PDB_UCS_5(test_node)
-end = time.time()
-print(end-start)
-np.save('PDB_5_4.npy', PDB_5_4)
+#start = time.time()
+#test_state = n_puzzle(4,[10,11,13,14,15])
+#test_node = node(test_state, None, 1)
+#PDB_5_4 = PDB_UCS_5(test_node)
+#end = time.time()
+#print(end-start)
+#np.save('PDB_5_4.npy', PDB_5_4)
 
 #PDB Construction
 #start = time.time()

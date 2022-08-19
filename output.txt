@@ -1,18 +1,30 @@
 Test instance:0
 PDB_663
-Time Elapsed:1.9454238830000008
+Time Elapsed:1.8727029699999989
 Nodes Generated:30855
 Nodes Expanded:9923
 Cost:41.0
 
 PDB_456
-Time Elapsed:3.2080715647999964
+Time Elapsed:3.1155122516000007
 Nodes Generated:47561
 Nodes Expanded:15455
 Cost:41.0
 
+PDB_456-2
+Time Elapsed:12.624898173399993
+Nodes Generated:163386
+Nodes Expanded:53431
+Cost:41.0
+
+PDB_456-3
+Time Elapsed:4.0326348338
+Nodes Generated:66681
+Nodes Expanded:21578
+Cost:41.0
+
 PDB_555
-Time Elapsed:1.1984255200000007
+Time Elapsed:1.1503277633999915
 Nodes Generated:20246
 Nodes Expanded:6562
 Cost:41.0
@@ -21,19 +33,31 @@ Cost:41.0
 
 Test instance:1
 PDB_663
-Time Elapsed:2.8024534486000023
+Time Elapsed:2.6467933045999983
 Nodes Generated:48111
 Nodes Expanded:15419
 Cost:49.0
 
 PDB_456
-Time Elapsed:2.1794029857999986
+Time Elapsed:1.9407282236000127
 Nodes Generated:36571
 Nodes Expanded:11672
 Cost:49.0
 
+PDB_456-2
+Time Elapsed:14.101190254999995
+Nodes Generated:232027
+Nodes Expanded:76551
+Cost:49.0
+
+PDB_456-3
+Time Elapsed:30.555689259799976
+Nodes Generated:462718
+Nodes Expanded:155598
+Cost:49.0
+
 PDB_555
-Time Elapsed:3.618783382999993
+Time Elapsed:3.6753602019999563
 Nodes Generated:65852
 Nodes Expanded:21051
 Cost:49.0
