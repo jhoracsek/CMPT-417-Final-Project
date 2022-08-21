@@ -225,7 +225,7 @@ def a_star_dd_extra_mem(start_state, h_func):
             print('Node h_val:', current.h_val)
             print('Elapsed time:', end_time - start_time)
             cur = current
-            if False:
+            if True:
                 while cur.parent != None:
                     cur.state.display()
                     cur = cur.parent
@@ -255,6 +255,7 @@ def ida_star(start_state, h_func):
 
     # To print every 500th node
     count = 0
+    generated = 0
     while True:
 
         stack = []
@@ -267,6 +268,7 @@ def ida_star(start_state, h_func):
             if current.is_goal():
                 print("Found Solution")
                 print('Node num:', count)
+                print('Generated:', generated)
                 print('Node f_val:', current.f_val)
                 print('Node g_val:', current.g_val)
                 print('Node h_val:', current.h_val)
@@ -289,6 +291,7 @@ def ida_star(start_state, h_func):
 
             if count % 500 == 0:
                 print('Node num:', count)
+                print('Generated:', generated)
                 print('Node f_val:', current.f_val)
                 print('Node g_val:', current.g_val)
                 print('Node h_val:', current.h_val)
@@ -296,6 +299,7 @@ def ida_star(start_state, h_func):
 
             children = current.generate_children()
             while children.empty() == False:
+                generated+=1
                 child = children.get()
                 stack.append(child)
             # For old implementation of generate_children()
@@ -307,3 +311,80 @@ def ida_star(start_state, h_func):
         print('Updated cost threshold', l)
         l = minCost
 
+def ida_star_path_dd(start_state, h_func):
+    root = node_astar(start_state, None, h_func, 0)
+    # Cost threshold
+    l = root.f_val
+
+    # To print every 500th node
+    count = 0
+    generated = 0
+    start_time = perf_counter()
+    while True:
+
+        stack = []
+        stack.append(root)
+        minCost = math.inf
+        while len(stack) > 0:
+
+            current = stack.pop()
+
+            if current.is_goal():
+                end_time = perf_counter()
+                print("Found Solution")
+                print('Nodes Expanded:', count)
+                print('Nodes Generated:', generated)
+                print('Node f_val:', current.f_val)
+                print('Node g_val:', current.g_val)
+                print('Node h_val:', current.h_val)
+                print('Elapsed time:', end_time - start_time)
+                print()
+
+                cur = current
+                """"
+                while cur.parent != None:
+                    cur.state.display()
+                    cur = cur.parent
+                    print()
+                cur.state.display()
+                """
+                return (end_time - start_time, generated, count, current.f_val)
+
+            cur = current
+            repeat = False
+            while cur.parent != None:
+                cur = cur.parent
+                if current == cur:
+                    repeat = True
+                    break
+            if repeat == True:
+                continue
+
+
+            # This is where we prune nodes greater than the cost threshold
+            # so we also keep track of the minimum cost of all prined nodes
+            if current.f_val > l:
+                minCost = min(minCost, current.f_val)
+                continue
+
+            if count % 500 == 0:
+                print('Node num:', count)
+                print('Generated:', generated)
+                print('Node f_val:', current.f_val)
+                print('Node g_val:', current.g_val)
+                print('Node h_val:', current.h_val)
+                print()
+
+            children = current.generate_children()
+            while children.empty() == False:
+                generated+=1
+                child = children.get()
+                stack.append(child)
+            # For old implementation of generate_children()
+            # for child in current.generate_children():
+            #    stack.append(child)
+
+            count += 1
+        # Update cost threshold
+        #print('Updated cost threshold', l)
+        l = minCost

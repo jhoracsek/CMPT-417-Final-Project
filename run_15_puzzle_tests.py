@@ -172,7 +172,6 @@ def PDB_456_Heuristic(state):
                 count += 1
     value3 = PDB_4_1[indices[0]][indices[1]][indices[2]][indices[3]]
 
-    # [2][3][6][7]
     return value1 + value2 + value3
 
 # 4-5-6-2
@@ -327,8 +326,11 @@ test_instances[7].set_puzzle([12,14,4,6, 2,11,7,15, 3,1,10,0, 8,9,13,5])
 test_instances[8].set_puzzle([4,3,0,15, 7,14,1,6, 11,13,5,10, 8,2,9,12])
 test_instances[9].set_puzzle([15,7,5,10, 4,0,12,6, 2,11,1,14, 9,13,8,3])
 
+#ida_star_path_dd(test_instances[1], PDB_555_Heuristic)
+
+
 f = open("output.txt","w")
-repeatNum = 3
+repeatNum = 5
 for num, test_instance in enumerate(test_instances):
     f.write("Test instance:")
     f.write(str(num))
@@ -336,6 +338,7 @@ for num, test_instance in enumerate(test_instances):
     time_sum=0
     for i in range(repeatNum):
         info = a_star_dd_extra_mem(test_instance, PDB_663_Heuristic)
+        #info = ida_star_path_dd(test_instance, PDB_663_Heuristic)
         time_sum+=info[0]
     time_elapsed=time_sum/repeatNum
     f.write("PDB_663")
@@ -356,6 +359,7 @@ for num, test_instance in enumerate(test_instances):
     time_sum = 0
     for i in range(repeatNum):
         info = a_star_dd_extra_mem(test_instance, PDB_456_Heuristic)
+        #info = ida_star_path_dd(test_instance, PDB_456_Heuristic)
         time_sum += info[0]
     time_elapsed = time_sum / repeatNum
     f.write("PDB_456")
@@ -376,6 +380,7 @@ for num, test_instance in enumerate(test_instances):
     time_sum = 0
     for i in range(repeatNum):
         info = a_star_dd_extra_mem(test_instance, PDB_456_2_Heuristic)
+        #info = ida_star_path_dd(test_instance, PDB_456_2_Heuristic)
         time_sum += info[0]
     time_elapsed = time_sum / repeatNum
     f.write("PDB_456-2")
@@ -396,6 +401,7 @@ for num, test_instance in enumerate(test_instances):
     time_sum = 0
     for i in range(repeatNum):
         info = a_star_dd_extra_mem(test_instance, PDB_456_3_Heuristic)
+        #info = ida_star_path_dd(test_instance, PDB_456_3_Heuristic)
         time_sum += info[0]
     time_elapsed = time_sum / repeatNum
     f.write("PDB_456-3")
@@ -416,6 +422,7 @@ for num, test_instance in enumerate(test_instances):
     time_sum = 0
     for i in range(repeatNum):
         info = a_star_dd_extra_mem(test_instance, PDB_555_Heuristic)
+        #info = ida_star_path_dd(test_instance, PDB_555_Heuristic)
         time_sum += info[0]
     time_elapsed = time_sum / repeatNum
     f.write("PDB_555")
@@ -437,6 +444,7 @@ for num, test_instance in enumerate(test_instances):
 
 
 f.close()
+
 
 #a_star_dd_extra_mem(test_instances[0],PDB_663_Heuristic)
 #a_star_dd_extra_mem(test_instances[0],PDB_456_Heuristic)

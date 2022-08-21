@@ -173,6 +173,7 @@ def PDB_UCS(root):
             print('Indices', i)
             current.state.display()
         currentIteration += 1
+    #print('Final PDBs_set:', PDBs_set)
     return PDB
 
 
